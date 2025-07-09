@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XCode Drishti - Crowd Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>XCode Drishti</h2>
+            <div class="system-status">
+                <span class="status-dot online"></span>
+                <span>Online</span>
+            </div>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="#" class="nav-item active" data-section="dashboard">
+                <span class="nav-icon">📊</span>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item" data-section="live-feed">
+                <span class="nav-icon">📹</span>
+                Live Feed
+            </a>
+            <a href="#" class="nav-item" data-section="analytics">
+                <span class="nav-icon">📈</span>
+                Analytics
+            </a>
+            <a href="#" class="nav-item" data-section="emergency">
+                <span class="nav-icon">🚨</span>
+                Emergency Response
+            </a>
+            <a href="#" class="nav-item" data-section="risk">
+                <span class="nav-icon">⚠️</span>
+                Risk Assessment
+            </a>
+            <a href="#" class="nav-item" data-section="settings">
+                <span class="nav-icon">⚙️</span>
+                Settings
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header Bar -->
+        <header class="header-bar">
+            <div class="header-left">
+                <h1>Dashboard</h1>
+                <div class="datetime">
+                    <span id="current-date">Wednesday, July 09, 2025</span>
+                    <span id="current-time">4:30 PM</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="alert-summary">
+                    <div class="alert-count critical">
+                        <span class="count">0</span>
+                        <span class="label">Critical</span>
+                    </div>
+                    <div class="alert-count high">
+                        <span class="count">1</span>
+                        <span class="label">High</span>
+                    </div>
+                    <div class="alert-count medium">
+                        <span class="count">3</span>
+                        <span class="label">Medium</span>
+                    </div>
+                </div>
+                
+                <div class="quick-actions">
+                    <button class="btn btn--primary emergency-btn">Emergency Protocol</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-grid">
+            <!-- Live Video Feed Section -->
+            <section class="video-feeds card">
+                <div class="section-header">
+                    <h3>Live Video Feeds</h3>
+                    <div class="controls">
+                        <button class="btn btn--sm btn--outline">Grid View</button>
+                        <button class="btn btn--sm btn--outline">Full Screen</button>
+                    </div>
+                </div>
+                
+                <div class="video-grid">
+                    <div class="video-feed" data-zone="A">
+                        <div class="video-placeholder">
+                            <div class="camera-icon">📹</div>
+                            <div class="zone-label">Zone A - Main Stage</div>
+                            <div class="crowd-overlay">
+                                <span class="density-indicator medium">78% Capacity</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-feed" data-zone="B">
+                        <div class="video-placeholder">
+                            <div class="camera-icon">📹</div>
+                            <div class="zone-label">Zone B - Food Court</div>
+                            <div class="crowd-overlay">
+                                <span class="density-indicator low">45% Capacity</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-feed" data-zone="C">
+                        <div class="video-placeholder">
+                            <div class="camera-icon">📹</div>
+                            <div class="zone-label">Zone C - Entry Gate</div>
+                            <div class="crowd-overlay">
+                                <span class="density-indicator high">92% Capacity</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-feed" data-zone="D">
+                        <div class="video-placeholder">
+                            <div class="camera-icon">📹</div>
+                            <div class="zone-label">Zone D - Parking</div>
+                            <div class="crowd-overlay">
+                                <span class="density-indicator low">23% Capacity</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-feed" data-zone="E">
+                        <div class="video-placeholder">
+                            <div class="camera-icon">📹</div>
+                            <div class="zone-label">Zone E - Exit Plaza</div>
+                            <div class="crowd-overlay">
+                                <span class="density-indicator medium">67% Capacity</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-feed" data-zone="F">
+                        <div class="video-placeholder">
+                            <div class="camera-icon">📹</div>
+                            <div class="zone-label">Zone F - Vendor Area</div>
+                            <div class="crowd-overlay">
+                                <span class="density-indicator low">34% Capacity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Crowd Analytics Panel -->
+            <section class="analytics-panel card">
+                <div class="section-header">
+                    <h3>Crowd Analytics</h3>
+                    <div class="last-updated">Last updated: <span id="last-updated">now</span></div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="current-count">15,247</div>
+                        <div class="stat-label">Current Count</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-value" id="predicted-peak">18,500</div>
+                        <div class="stat-label">Predicted Peak</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-value" id="peak-time">15 min</div>
+                        <div class="stat-label">Time to Peak</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-value" id="avg-density">68%</div>
+                        <div class="stat-label">Avg Density</div>
+                    </div>
+                </div>
+                
+                <div class="trend-chart">
+                    <h4>Crowd Flow Trend</h4>
+                    <div class="chart-container">
+                        <canvas id="crowd-trend-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real-time Map/Heatmap -->
+            <section class="map-section card">
+                <div class="section-header">
+                    <h3>Venue Map & Heatmap</h3>
+                    <div class="map-controls">
+                        <button class="btn btn--sm btn--outline active" data-view="heatmap">Heatmap</button>
+                        <button class="btn btn--sm btn--outline" data-view="flow">Flow</button>
+                        <button class="btn btn--sm btn--outline" data-view="incidents">Incidents</button>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <div class="venue-map">
+                        <div class="zone-area zone-a" data-zone="A">
+                            <span class="zone-label">Zone A</span>
+                            <div class="crowd-indicator medium"></div>
+                        </div>
+                        <div class="zone-area zone-b" data-zone="B">
+                            <span class="zone-label">Zone B</span>
+                            <div class="crowd-indicator low"></div>
+                        </div>
+                        <div class="zone-area zone-c" data-zone="C">
+                            <span class="zone-label">Zone C</span>
+                            <div class="crowd-indicator high"></div>
+                        </div>
+                        <div class="zone-area zone-d" data-zone="D">
+                            <span class="zone-label">Zone D</span>
+                            <div class="crowd-indicator low"></div>
+                        </div>
+                        <div class="zone-area zone-e" data-zone="E">
+                            <span class="zone-label">Zone E</span>
+                            <div class="crowd-indicator medium"></div>
+                        </div>
+                        <div class="zone-area zone-f" data-zone="F">
+                            <span class="zone-label">Zone F</span>
+                            <div class="crowd-indicator low"></div>
+                        </div>
+                        
+                        <div class="exit-marker" style="top: 10%; left: 20%;">🚪</div>
+                        <div class="exit-marker" style="top: 80%; left: 80%;">🚪</div>
+                        <div class="exit-marker" style="top: 50%; left: 90%;">🚪</div>
+                        
+                        <div class="incident-marker" style="top: 30%; left: 70%;">🚨</div>
+                    </div>
+                </div>
+                
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <div class="legend-color low"></div>
+                        <span>Low Density</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color medium"></div>
+                        <span>Medium Density</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color high"></div>
+                        <span>High Density</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alert and Notification Panel -->
+            <section class="alerts-panel card">
+                <div class="section-header">
+                    <h3>Alerts & Notifications</h3>
+                    <div class="alert-controls">
+                        <button class="btn btn--sm btn--outline">Clear All</button>
+                    </div>
+                </div>
+                
+                <div class="alerts-feed" id="alerts-feed">
+                    <!-- Alerts will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Emergency Response Panel -->
+            <section class="emergency-panel card">
+                <div class="section-header">
+                    <h3>Emergency Response</h3>
+                    <div class="response-status">
+                        <span class="status-indicator ready">Ready</span>
+                    </div>
+                </div>
+                
+                <div class="response-actions">
+                    <div class="action-group">
+                        <h4>Quick Dispatch</h4>
+                        <div class="dispatch-buttons">
+                            <button class="btn btn--primary dispatch-btn" data-type="security">
+                                Security Team
+                                <span class="response-time">~2 min</span>
+                            </button>
+                            <button class="btn btn--primary dispatch-btn" data-type="medical">
+                                Medical Team
+                                <span class="response-time">~3 min</span>
+                            </button>
+                            <button class="btn btn--primary dispatch-btn" data-type="fire">
+                                Fire Safety
+                                <span class="response-time">~5 min</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-status">
+                        <h4>Available Resources</h4>
+                        <div class="resource-grid">
+                            <div class="resource-item">
+                                <span class="resource-icon">👮</span>
+                                <span class="resource-count">12/18</span>
+                                <span class="resource-label">Security</span>
+                            </div>
+                            <div class="resource-item">
+                                <span class="resource-icon">🏥</span>
+                                <span class="resource-count">4/6</span>
+                                <span class="resource-label">Medical</span>
+                            </div>
+                            <div class="resource-item">
+                                <span class="resource-icon">🚒</span>
+                                <span class="resource-count">2/3</span>
+                                <span class="resource-label">Fire</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Predictive Intelligence Panel -->
+            <section class="predictions-panel card">
+                <div class="section-header">
+                    <h3>Predictive Intelligence</h3>
+                    <div class="prediction-confidence">
+                        <span>Confidence: 94%</span>
+                    </div>
+                </div>
+                
+                <div class="predictions-content">
+                    <div class="prediction-alerts">
+                        <h4>Upcoming Risks</h4>
+                        <div class="prediction-list" id="prediction-list">
+                            <!-- Predictions will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="sentiment-analysis">
+                        <h4>Crowd Sentiment</h4>
+                        <div class="sentiment-indicators">
+                            <div class="sentiment-item">
+                                <span class="sentiment-label">Calm</span>
+                                <div class="sentiment-bar">
+                                    <div class="sentiment-fill" style="width: 70%;"></div>
+                                </div>
+                                <span class="sentiment-value">70%</span>
+                            </div>
+                            <div class="sentiment-item">
+                                <span class="sentiment-label">Anxious</span>
+                                <div class="sentiment-bar">
+                                    <div class="sentiment-fill warning" style="width: 25%;"></div>
+                                </div>
+                                <span class="sentiment-value">25%</span>
+                            </div>
+                            <div class="sentiment-item">
+                                <span class="sentiment-label">Panic</span>
+                                <div class="sentiment-bar">
+                                    <div class="sentiment-fill danger" style="width: 5%;"></div>
+                                </div>
+                                <span class="sentiment-value">5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Zone Detail Modal -->
+    <div class="modal" id="zone-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-zone-title">Zone Details</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-zone-content">
+                <!-- Zone details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
